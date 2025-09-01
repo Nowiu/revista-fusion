@@ -52,39 +52,6 @@
       z-index: 1;
     }
 
-    .menu-toggle {
-      margin-top: 15px;
-      background: #4a6fa5;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-      z-index: 2;
-      position: relative;
-    }
-
-    .menu-toggle:hover { background: #d98bb6; }
-
-    nav {
-      display: none;
-      margin-top: 10px;
-      z-index: 2;
-      position: relative;
-    }
-
-    nav ul { list-style: none; }
-    nav ul li { margin: 8px 0; }
-    nav ul li a {
-      color: #4a6fa5;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover { color: #d98bb6; }
-
     section {
       display: flex;
       align-items: center;
@@ -194,7 +161,6 @@
       font-size: 14px;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       section {
         flex-direction: column !important;
@@ -215,17 +181,6 @@
 <body>
   <header>
     <h1>Fusion Magazine</h1>
-    <button class="menu-toggle">☰ Menú</button>
-    <nav>
-      <ul>
-        <li><a href="#quienes">Quiénes Somos</a></li>
-        <li><a href="#pagina1">Narrativa</a></li>
-        <li><a href="#pagina2">Identidad</a></li>
-        <li><a href="#pagina3">Simbolismo</a></li>
-        <li><a href="#pagina4">Época</a></li>
-        <li><a href="#pagina5">Pasarela</a></li>
-      </ul>
-    </nav>
   </header>
 
   <!-- Quiénes somos -->
@@ -250,7 +205,7 @@
     <img src="6.jpg" alt="Narrativa" class="imagen-topico">
   </section>
 
-  <!-- Sección 2 (Collage) -->
+  <!-- Sección 2 -->
   <section id="pagina2">
     <div class="texto">
       <h2>Identidad y Psicología</h2>
@@ -264,7 +219,7 @@
     </div>
   </section>
 
-  <!-- Sección 3 (Simbolismo con nueva imagen) -->
+  <!-- Sección 3 -->
   <section id="pagina3">
     <div class="texto">
       <h2>Simbolismo</h2>
@@ -273,7 +228,7 @@
     <img src="simbolismo.jpg" alt="Simbolismo" class="imagen-topico">
   </section>
 
-  <!-- Sección 4 (Marcando una Época con dos imágenes) -->
+  <!-- Sección 4 -->
   <section id="pagina4">
     <div class="texto">
       <h2>Marcando una Época</h2>
@@ -285,7 +240,7 @@
     </div>
   </section>
 
-  <!-- Sección 5 (Pasarela con varias imágenes) -->
+  <!-- Sección 5 -->
   <section id="pagina5">
     <div class="texto">
       <h2>De la Pantalla a la Pasarela: Cuando el Cine Lanza Tendencias</h2>
@@ -303,22 +258,21 @@
     <p>&copy; 2025 Fusion Magazine | Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Script para sección desplegable -->
   <!-- Script para mostrar/ocultar sección Quiénes Somos con flechas -->
-<script>
-  const toggleBtn = document.getElementById('toggleQuienes');
-  const contenido = document.getElementById('contenidoQuienes');
+  <script>
+    const toggleBtn = document.getElementById('toggleQuienes');
+    const contenido = document.getElementById('contenidoQuienes');
 
-  toggleBtn.addEventListener('click', function() {
-    const isHidden = contenido.style.display === 'none' || contenido.style.display === '';
-    contenido.style.display = isHidden ? 'block' : 'none';
-    toggleBtn.textContent = isHidden ? '⌃' : '⌄'; // Flechita arriba/abajo
-  });
-</script>
+    toggleBtn.addEventListener('click', function() {
+      const isHidden = contenido.style.display === 'none' || contenido.style.display === '';
+      contenido.style.display = isHidden ? 'block' : 'none';
+      toggleBtn.textContent = isHidden ? '⌃' : '⌄'; // Flechita arriba/abajo
+    });
+  </script>
 
-  
 </body>
 </html>
+
 
 
 
