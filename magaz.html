@@ -122,7 +122,7 @@
     .double-img {
       flex: 1;
       display: flex;
-      gap: 20px;
+      gap: 60px; /* Aquí ampliamos el espacio entre texto e imágenes */
       justify-content: center;
       margin-left: 60px;
       margin-right: 60px;
@@ -228,7 +228,7 @@
     <img src="simbolismo.jpg" alt="Simbolismo" class="imagen-topico">
   </section>
 
-  <!-- Sección 4 -->
+  <!-- Sección 4 (Marcando una Época) -->
   <section id="pagina4">
     <div class="texto">
       <h2>Marcando una Época</h2>
@@ -266,12 +266,12 @@
     toggleBtn.addEventListener('click', function() {
       const isHidden = contenido.style.display === 'none' || contenido.style.display === '';
       contenido.style.display = isHidden ? 'block' : 'none';
-      toggleBtn.textContent = isHidden ? '⌃' : '⌄'; // Flechita arriba/abajo
+      toggleBtn.textContent = isHidden ? '⌃' : '⌄';
     });
   </script>
-
 </body>
 </html>
+
 
 
 
