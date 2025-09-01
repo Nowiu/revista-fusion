@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fusion Magazine - Portada</title>
@@ -11,7 +10,6 @@
 
   <!-- Font Awesome actualizado (funciona sin clave) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 
   <style>
     body {
@@ -142,14 +140,58 @@
       color: #ff69b4;
       transform: scale(1.2);
     }
+
+    /* Modal "Sobre Nosotros" */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px 30px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      font-family: 'Poppins', sans-serif;
+      color: #2a3f66;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .modal-content p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #e1306c;
+    }
   </style>
 </head>
 <body>
 
   <!-- Botón de Instagram en la esquina superior izquierda -->
-<a href="https://www.instagram.com/fusion_magazinee?igsh=MWppNWdvZnBqZDRieA%3D%3D&utm_source=qr" target="_blank" class="instagram-btn" aria-label="Instagram">
-
- <i class="fab fa-instagram"></i>
+  <a href="https://www.instagram.com/fusion_magazinee?igsh=MWppNWdvZnBqZDRieA%3D%3D&utm_source=qr" target="_blank" class="instagram-btn" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
   </a>
 
   <h1>Fusion Magazine</h1>
@@ -161,9 +203,8 @@
   <div class="dropdown-menu" id="dropdownMenu">
     <a href="#redes">Suscribirse</a>
     <a href="#redes">Inicia sesión</a>
-     <a href="#redes">Sobre Nosotros</a>
+    <a href="#" onclick="openModal()">Sobre Nosotros</a>
     <a href="magaz.html">Revista</a>
-    
   </div>
 
   <!-- Carrusel infinito -->
@@ -215,6 +256,16 @@
     </div>
   </div>
 
+  <!-- Modal "Sobre Nosotros" -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p>
+        Somos Fusión Magazine, un colectivo creativo dedicado a explorar el punto de encuentro entre el cine, la moda y el arte. A través de narrativas visuales y escritas, buscamos conectar la cultura dominicana con las tendencias globales, mostrando que la creatividad es un lenguaje universal que no conoce fronteras.
+      </p>
+    </div>
+  </div>
+
   <!-- Script para mostrar/ocultar menú -->
   <script>
     function toggleMenu() {
@@ -230,9 +281,20 @@
         menu.classList.remove('show');
       }
     });
+
+    // Funciones para abrir/cerrar modal
+    function openModal() {
+      document.getElementById('aboutModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('aboutModal').style.display = 'none';
+    }
   </script>
 </body>
 </html>
+
+
 
 
 
