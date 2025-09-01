@@ -231,7 +231,7 @@
   <!-- Quiénes somos -->
   <section id="quienes" style="flex-direction: column; text-align: center;">
     <h2>Quiénes Somos</h2>
-    <button id="toggleQuienes" style="margin-bottom: 20px; background-color: #4a6fa5; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-size: 16px;">Mostrar/Ocultar</button>
+    <button id="toggleQuienes" style="margin-bottom: 20px; background-color: #4a6fa5; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-size: 16px;">⌄</button>
     <div id="contenidoQuienes" style="display: none;">
       <p style="max-width: 800px; margin: 20px auto; font-size: 18px; line-height: 1.8; color: #555;">
         Somos <strong>Fusión Magazine</strong>, un colectivo creativo dedicado a explorar el punto de encuentro entre el cine, la moda y el arte. 
@@ -304,14 +304,22 @@
   </footer>
 
   <!-- Script para sección desplegable -->
-  <script>
-    document.getElementById('toggleQuienes').addEventListener('click', function() {
-      const contenido = document.getElementById('contenidoQuienes');
-      contenido.style.display = contenido.style.display === 'none' ? 'block' : 'none';
-    });
-  </script>
+  <!-- Script para mostrar/ocultar sección Quiénes Somos con flechas -->
+<script>
+  const toggleBtn = document.getElementById('toggleQuienes');
+  const contenido = document.getElementById('contenidoQuienes');
+
+  toggleBtn.addEventListener('click', function() {
+    const isHidden = contenido.style.display === 'none' || contenido.style.display === '';
+    contenido.style.display = isHidden ? 'block' : 'none';
+    toggleBtn.textContent = isHidden ? '⌃' : '⌄'; // Flechita arriba/abajo
+  });
+</script>
+
+  
 </body>
 </html>
+
 
 
 
